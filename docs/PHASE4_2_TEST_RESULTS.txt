@@ -1,0 +1,83 @@
+Phase 4.2 final automated test run (2026-10-24)
+
+UNIT TESTS
+test_background_queue_coalesces_and_does_not_block_recognition (test_attendance.AttendanceTests.test_background_queue_coalesces_and_does_not_block_recognition) ... ok
+test_commit_failure_returns_no_success_receipt (test_attendance.AttendanceTests.test_commit_failure_returns_no_success_receipt) ... ok
+test_database_uniqueness_and_independent_connection_race (test_attendance.AttendanceTests.test_database_uniqueness_and_independent_connection_race) ... ok
+test_failed_transaction_rolls_back_and_retries_without_false_success (test_attendance.AttendanceTests.test_failed_transaction_rolls_back_and_retries_without_false_success) ... Attendance transaction failed: StorageError
+ok
+test_invalid_time_score_and_inactive_or_unenrolled_person_rejected (test_attendance.AttendanceTests.test_invalid_time_score_and_inactive_or_unenrolled_person_rejected) ... ok
+test_known_unknown_pair_records_only_known (test_attendance.AttendanceTests.test_known_unknown_pair_records_only_known) ... ok
+test_local_midnight_allows_next_day_and_writer_cache_rolls_over (test_attendance.AttendanceTests.test_local_midnight_allows_next_day_and_writer_cache_rolls_over) ... ok
+test_only_confirmed_known_creates_record_after_three_frames (test_attendance.AttendanceTests.test_only_confirmed_known_creates_record_after_three_frames) ... ok
+test_queue_overflow_reports_unsaved_observation_and_other_people_continue (test_attendance.AttendanceTests.test_queue_overflow_reports_unsaved_observation_and_other_people_continue) ... Attendance queue is full
+ok
+test_repeated_frames_restart_preserve_first_observation (test_attendance.AttendanceTests.test_repeated_frames_restart_preserve_first_observation) ... ok
+test_two_known_people_each_receive_one_record (test_attendance.AttendanceTests.test_two_known_people_each_receive_one_record) ... ok
+test_unknown_and_empty_frames_never_write_even_with_identity_field (test_attendance.AttendanceTests.test_unknown_and_empty_frames_never_write_even_with_identity_field) ... ok
+test_upgrade_v2_backup_roundtrip_and_older_backup_preservation (test_attendance.AttendanceTests.test_upgrade_v2_backup_roundtrip_and_older_backup_preservation) ... ok
+test_worker_integrates_confirmed_output_and_survives_database_failure (test_attendance.AttendanceTests.test_worker_integrates_confirmed_output_and_survives_database_failure) ... Attendance transaction failed: StorageError
+ok
+test_archive_during_capture_keeps_old_templates (test_enrollment.EnrollmentTests.test_archive_during_capture_keeps_old_templates) ... ok
+test_atomic_replacement_rollback_and_foreign_key (test_enrollment.EnrollmentTests.test_atomic_replacement_rollback_and_foreign_key) ... ok
+test_backup_roundtrip_with_templates (test_enrollment.EnrollmentTests.test_backup_roundtrip_with_templates) ... ok
+test_count_confirmation_and_stale_replacement (test_enrollment.EnrollmentTests.test_count_confirmation_and_stale_replacement) ... ok
+test_numeric_roundtrip_and_invalid_vectors (test_enrollment.EnrollmentTests.test_numeric_roundtrip_and_invalid_vectors) ... ok
+test_save_metadata_and_persistence (test_enrollment.EnrollmentTests.test_save_metadata_and_persistence) ... ok
+test_upgrade_v1_preserves_people_and_restores_v1_backup (test_enrollment.EnrollmentTests.test_upgrade_v1_preserves_people_and_restores_v1_backup) ... ok
+test_all_faces_extract_independently_with_shared_quality_checks (test_matching.MatchingTests.test_all_faces_extract_independently_with_shared_quality_checks) ... ok
+test_gallery_reuses_saved_templates_and_excludes_archived_people (test_matching.MatchingTests.test_gallery_reuses_saved_templates_and_excludes_archived_people) ... ok
+test_known_unknown_two_faces_and_order_changes (test_matching.MatchingTests.test_known_unknown_two_faces_and_order_changes) ... ok
+test_no_face_rejection_and_identity_change_reset_confirmation (test_matching.MatchingTests.test_no_face_rejection_and_identity_change_reset_confirmation) ... ok
+test_weak_ambiguous_empty_incompatible_and_invalid (test_matching.MatchingTests.test_weak_ambiguous_empty_incompatible_and_invalid) ... ok
+test_worker_failures_release_and_clear_results (test_matching.MatchingTests.test_worker_failures_release_and_clear_results) ... Recognition stopped during camera frame read: RecognitionError
+Recognition stopped during gallery initialization: RecognitionError
+ok
+test_camera_release_on_open_and_read_failure (test_recognition.RecognitionTests.test_camera_release_on_open_and_read_failure) ... ok
+test_model_hash_failure (test_recognition.RecognitionTests.test_model_hash_failure) ... ok
+test_no_face_and_multiple_never_extract (test_recognition.RecognitionTests.test_no_face_and_multiple_never_extract) ... ok
+test_quality_alignment_and_valid_embedding (test_recognition.RecognitionTests.test_quality_alignment_and_valid_embedding) ... ok
+test_real_models_blank_input_dynamic_sizes_and_sface_mechanics (test_recognition.RecognitionTests.test_real_models_blank_input_dynamic_sizes_and_sface_mechanics) ... [ WARN:0@3.372] global net_impl_backend.cpp:345 cv::dnn::dnn5_v20260605::Net::Impl::setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@3.440] global net_impl_backend.cpp:345 cv::dnn::dnn5_v20260605::Net::Impl::setPreferableTarget Targets are not supported by the new graph engine for now
+ok
+test_archive_excludes_active_keeps_data_and_reserves_id (test_storage_people.StorageTests.test_archive_excludes_active_keeps_data_and_reserves_id) ... ok
+test_backup_never_overwrites_without_confirmation (test_storage_people.StorageTests.test_backup_never_overwrites_without_confirmation) ... ok
+test_backup_restore_and_recovery_copy (test_storage_people.StorageTests.test_backup_restore_and_recovery_copy) ... ok
+test_configured_runtime_path (test_storage_people.StorageTests.test_configured_runtime_path) ... ok
+test_connection_failure_is_safe_persian_error (test_storage_people.StorageTests.test_connection_failure_is_safe_persian_error) ... ok
+test_create_retrieve_list_and_restart (test_storage_people.StorageTests.test_create_retrieve_list_and_restart) ... ok
+test_duplicate_create_and_update_leave_data_unchanged (test_storage_people.StorageTests.test_duplicate_create_and_update_leave_data_unchanged) ... ok
+test_failed_migration_rolls_back_and_order_is_deterministic (test_storage_people.StorageTests.test_failed_migration_rolls_back_and_order_is_deterministic) ... ok
+test_fresh_schema_migrations_and_idempotence (test_storage_people.StorageTests.test_fresh_schema_migrations_and_idempotence) ... ok
+test_missing_person_errors (test_storage_people.StorageTests.test_missing_person_errors) ... ok
+test_restore_rejects_invalid_and_unrelated_files_without_changes (test_storage_people.StorageTests.test_restore_rejects_invalid_and_unrelated_files_without_changes) ... ok
+test_search_name_id_variations_and_literals (test_storage_people.StorageTests.test_search_name_id_variations_and_literals) ... ok
+test_transactions_roll_back_and_connections_close (test_storage_people.StorageTests.test_transactions_roll_back_and_connections_close) ... ok
+test_unknown_migration_fails_without_data_loss (test_storage_people.StorageTests.test_unknown_migration_fails_without_data_loss) ... ok
+test_update_preserves_internal_id_and_registration (test_storage_people.StorageTests.test_update_preserves_internal_id_and_registration) ... ok
+test_ids_are_text_and_digits_are_not_transformed (test_validation.ValidationTests.test_ids_are_text_and_digits_are_not_transformed) ... ok
+test_required_fields (test_validation.ValidationTests.test_required_fields) ... ok
+
+----------------------------------------------------------------------
+Ran 49 tests in 3.992s
+
+OK
+
+Exit code: 0
+
+UI INTEGRATION TESTS
+test_attendance_commit_feedback_async_writer_and_database_failure (test_shell.ShellTest.test_attendance_commit_feedback_async_writer_and_database_failure) ... ok
+test_enrollment_capture_worker_save_cancel_and_failure (test_shell.ShellTest.test_enrollment_capture_worker_save_cancel_and_failure) ... ok
+test_people_add_validate_search_details_edit_archive (test_shell.ShellTest.test_people_add_validate_search_details_edit_archive) ... ok
+test_recognition_preview_results_failure_restart_and_safe_close (test_shell.ShellTest.test_recognition_preview_results_failure_restart_and_safe_close) ... ok
+test_storage_ui_backup_restore_and_validation (test_shell.ShellTest.test_storage_ui_backup_restore_and_validation) ... ok
+test_window_rtl_font_and_all_navigation (test_shell.ShellTest.test_window_rtl_font_and_all_navigation) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 7.164s
+
+OK
+
+Exit code: 0
+
+

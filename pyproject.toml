@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68,<81"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-attendance"
+version = "0.1.0"
+description = "Persian Windows attendance desktop application"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "PySide6==6.8.3",
+    "QtAwesome==1.4.0",
+    "opencv-python==5.0.0.93",
+    "numpy==2.4.6",
+    "XlsxWriter==3.2.9",
+]
+classifiers = ["Operating System :: Microsoft :: Windows", "Programming Language :: Python :: 3"]
+
+[project.optional-dependencies]
+dev = ["openpyxl==3.1.5"]
+
+[project.gui-scripts]
+smart-attendance = "attendance_app.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+attendance_app = ["assets/fonts/*.ttf"]
